@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="style.css">    
+        </head>
+        <body>
+            <div id="root">
+                <h1>Expense Tracker</h1>
+                <section>
+                    <h2>Add Expense</h2>
+                    <div id="container">
+                        <form id="expense-form">
+                        <label for="category">Category
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="transport">Transport</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="miscellaneous">Miscellaneous</option>
+                        </select>
+                        </label>
+                        <label for="amount">Amount
+                            <input type="number" id="amount" placeholder="Amount" name="amount" required></label>
+                        <label for="date">Date
+                            <input type="date" id="date" placeholder="Date" name="date" required></label>
+                        <label for="source">Source
+                        <select id="source" name="source" required>
+                            <option value="">Select Source</option>
+                            <option value="cash">Cash</option>
+                            <option value="bank">Bank</option>
+                        </select>
+                        </label>
+                        <button type="submit" id="add-expense">Submit</button>
+                        </form> 
+                    </div>
+                </section>
+                <section>
+                    <h2>Expense List</h2>
+                    <div id="filter-container">
+                        <label for="filter-start-date">Start Date
+                            <input type="date" id="filter-start-date" required>
+                        </label>
+                        <label for="filter-end-date">End Date
+                        <input type="date" id="filter-end-date" required>
+                        </label>
+                        <fieldset id="filter-category" required>
+                            <legend>Category</legend>
+                            <label><input type="checkbox" value="food">Food</label>
+                            <label><input type="checkbox" value="transport">Transport</label>
+                            <label><input type="checkbox" value="entertainment">Entertainment</label>
+                            <label><input type="checkbox" value="miscellaneous">Miscellaneous</label>
+                        </fieldset>
+                        <div class="filter-bar">
+                        <button type="button" id="filter-toggle">Filter🔍</button>
+                        <button type="button" id="reset-toggle">Reset</button>
+                        </div>
+                    </div>
+                    <div id="table-content">
+                        <table id="table-expense">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                    <th>Source</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expense-list"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <section>
+                    <div id="summary">
+                        <h2>Summary/Chart</h2>
+                        <h3 id="date-range"></h3>
+                        <div id="category-total"></div>
+                        <div id="chart"></div>
+                    </div>
+                </section>
+            </div>
+        </body>
+        <script src="script.js"></script>
+
+    </html>
